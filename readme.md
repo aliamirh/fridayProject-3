@@ -18,7 +18,7 @@ _When a user inputs numbers it will convert those numbers into beep or boop._
 
 * The program returns a range of numbers from 0 to the users inputted number
   *Input: "4"
-  *Output: "0, 1, 2, 3, 4"
+  *Output: "4, 3, 2, 1, 0"
 
 * Numbers that contain a 1: all digits are replaced (all digits) with "Beep!"
   *_Input: "1"
