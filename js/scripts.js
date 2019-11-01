@@ -15,7 +15,15 @@ $(document).ready(function() {
         userNumPush -= 1;
       }
       for (i = 0; i < userNumArr.length; i++) {
-  
+        for (i = 0; i < userNumArr.length; i++) {
+        if (userNumArr[i].toString().includes(3)) {
+          userNumArr[i] = "Sorry Dave";
+        } else if (userNumArr[i].toString().includes(2)) {
+          userNumArr[i] = "Boop";
+        } else if (userNumArr[i].toString().includes(1)) {
+          userNumArr[i] = "Beep";
+        }
+      }
     };
   });
 });
