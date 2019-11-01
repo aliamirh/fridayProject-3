@@ -1,22 +1,16 @@
 $(document).ready(function(){
   $("#beepForm").submit(function(){
     event.preventDefault();
-    var userInput = parseInt($("input#beepNum").val());
-    console.log(typeof userInput)
-    var userInputArr=[];
+    var userInput = parseInt($("#beepNum").val());
+    var inputArr=[]
     var userSplit = function(){
-      console.log("test")
-      var userInputPush = userInput;
-      console.log(userInput)
+      console.log('test')
+      var userInputPush = userInput
       for(i=1; i <= userInput; i++){
-      userInputArr.push(userInputPush)
+      inputArr.push(userInputPush)
       userInputPush -= 1;
       }
-      // for (i = 0; i < userInputArr.length; i ++){
-      //   if(userInputArr[i].toString().inclueds(3)){
-      //     userInputArr[i] = 'boop';
-      //   }
-      // }
     };
+    console.log(inputArr)
   });
 });
