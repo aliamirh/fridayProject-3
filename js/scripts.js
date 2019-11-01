@@ -1,11 +1,15 @@
-
+//---------------User interface----------------------
 
 $(document).ready(function() {
   $("#userNum").submit(function(event) {
     event.preventDefault();
     var userNum = parseInt($("input#userInput").val());
     var gettingFunctionNumber = numberSplit(userNum)
+    var finalStep = gettingFunctionNumber.join(",")
+    $("#beepBoopLanguage").text(finalStep)
 
+
+//----------------Business logic below----------------
 
     function numberSplit(userInput) {
       var userNumArr = [];
@@ -15,7 +19,6 @@ $(document).ready(function() {
         userNumPush -= 1;
       }
       for (i = 0; i < userNumArr.length; i++) {
-        for (i = 0; i < userNumArr.length; i++) {
         if (userNumArr[i].toString().includes(3)) {
           userNumArr[i] = "Sorry Dave";
         } else if (userNumArr[i].toString().includes(2)) {
@@ -24,6 +27,7 @@ $(document).ready(function() {
           userNumArr[i] = "Beep";
         }
       }
+      return userNumArr;
     };
   });
 });
