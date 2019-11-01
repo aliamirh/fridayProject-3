@@ -1,15 +1,18 @@
 $(document).ready(function(){
   $("#beepForm").submit(function(event){
     event.preventDefault();
-    var userInput = parseInt($(".beepNum").val())
+    var userInput = parseInt($("input.beepNum").val())
     var userInputArr=[];
-    function userInputSplit (userInput){
+    var userInputSplit = function(){
+      console.log("test")
+      for(i=0; i <= userInput; i++){
       var userInputPush = userInput
-      for(i=1; i<= userInput; i++){
-        userInputArr.push(userInputPush)
+      userInputArr.push(userInputPush)
+      userInputPush -= 1;
       }
-
     }
+
+
 
 
 
