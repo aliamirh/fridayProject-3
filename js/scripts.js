@@ -1,33 +1,29 @@
 //---------------User interface----------------------
 
 $(document).ready(function() {
-  $("#userNum").submit(function(event) {
+  $("#userNumber").submit(function(event) {
     event.preventDefault();
     var userNum = parseInt($("input#userInput").val());
-    var gettingFunctionNumber = numberSplit(userNum)
-    var finalStep = gettingFunctionNumber.join(",")
+    var finalStep = numberSplit(userNum).join(",")
     $("#beepBoopLanguage").text(finalStep)
 
+  });
+});
 
 //----------------Business logic below----------------
 
     function numberSplit(userInput) {
       var userNumArr = [];
-      var userNumPush = userNum
-      for (i = 1; i <= userNum; i++) {
-        userNumArr.push(userNumPush)
-        userNumPush -= 1;
-      }
-      for (i = 0; i < userNumArr.length; i++) {
-        if (userNumArr[i].toString().includes(3)) {
-          userNumArr[i] = "Sorry Dave";
-        } else if (userNumArr[i].toString().includes(2)) {
-          userNumArr[i] = "Boop";
-        } else if (userNumArr[i].toString().includes(1)) {
-          userNumArr[i] = "Beep";
+      for (i = 0; i <= userInput; i++) {
+        if ([i].toString().includes(3)) {
+          userNumArr.push("Sorry Dave");
+        } else if ([i].toString().includes(2)) {
+          userNumArr.push("Boop");
+        } else if ([i].toString().includes(1)) {
+          userNumArr.push("Beep");
+        } else{
+          userNumArr.push([i])
         }
       }
-      return userNumArr;
+      return userNumArr.reverse();
     };
-  });
-});
